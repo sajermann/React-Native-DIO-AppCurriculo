@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView, Alert, TouchableOpacity } from 'react-native';
 import fotoPerfil from './assets/BrunoSajermann.png';
 import Icon from 'react-native-vector-icons/Feather';
+import Card from './src/components/Card';
 
 export default function App() {
 
@@ -33,33 +34,16 @@ export default function App() {
           </TouchableOpacity>
         </View>
       </View>
-
-      <View style={styles.cardContainer}>
-        <View style={styles.card}>
-          <View style={styles.cardHeader}>
-            <Text>Experiência Profissional</Text>
-          </View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardContentText}>Desenvolva Inc.</Text>
-            <Text style={styles.cardContentText}>Desenvolvida Ltda</Text>
-            <Text style={styles.cardContentText}>Dezenvolvéu ME</Text>
-          </View>
-        </View>
-      </View>
-
-      <View style={styles.cardContainer}>
-        <View style={styles.card}>
-          <View style={styles.cardHeader}>
-            <Text>Formação Acadêmica</Text>
-          </View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardContentText}>Universidade Cruzeiro do Sul</Text>
-            <Text style={styles.cardContentText}>Rocketseat</Text>
-            <Text style={styles.cardContentText}>DIO</Text>
-          </View>
-        </View>
-      </View>
-
+      <Card titulo="Formação Acadêmica">
+        <Text style={styles.cardContentText}>Universidade Cruzeiro do Sul</Text>
+        <Text style={styles.cardContentText}>Rocketseat</Text>
+        <Text style={styles.cardContentText}>DIO</Text>
+      </Card>
+      <Card titulo="Experiências Profissionais">
+        <Text style={styles.cardContentText}>Desenvolva Inc.</Text>
+        <Text style={styles.cardContentText}>Dezenvolveu Ltda</Text>
+        <Text style={styles.cardContentText}>Dexenvolvida ME</Text>
+      </Card>
     </View>
   );
 }
@@ -93,26 +77,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '60%',
     marginTop: 20
-  },
-  cardContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20
-  },
-  card: {
-    width: '60%',
-    borderRadius: 5,
-    borderWidth: 2,
-    borderColor: '#939393',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    backgroundColor: '#FFF'
-
-  },
-  cardHeader: {},
-  cardContent: {
-    marginTop: 20,
   },
   cardContentText: {
     color: '#939393',
